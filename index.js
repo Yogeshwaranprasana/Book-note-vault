@@ -31,11 +31,12 @@ const books =input.rows
    books.forEach(book => {
      book.cover_url = `https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`;
     }); 
-     res.render("index.ejs", {books});
+    res.status(200).render("index.ejs", {books});
 }
 
 catch(err){
     console.log(err)
+    res.status(500).send("Internal server error");
 }
 });
 
@@ -66,9 +67,10 @@ app.post("/add",async(req,res)=>{
     [title, author, rating, notes, date_read]
     );
     console.log("result:",{title, author, rating, notes, date_read})
-    res.redirect("/");
+    res.status(201).redirect("/");
 }catch (err) {
   console.error(err);
+  res.status(500).send("Failed to add book");
 }
 });
 
@@ -84,6 +86,7 @@ app.get("/edit/:id",async(req,res)=> {
     }
     catch(err){
         console.log(err);
+        res.status(500).send("Failed to edit book");
     }
 
 });
@@ -99,6 +102,7 @@ res.redirect("/");
 }
 catch(err){
 console.log(err)
+res.status(500).send("Failed to update book");
 }
 });
 
@@ -113,6 +117,7 @@ res.redirect("/");
     }
   catch(err){
       console.log(err);
+      res.status(500).send("Unable to delete")
     }
 
 });
