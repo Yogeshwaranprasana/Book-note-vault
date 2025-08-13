@@ -32,7 +32,7 @@ Features:
    Books list sorted with top recommendations on top
 
    Mobile-friendly and responsive design
-
+   
    Proper HTTP status codes for API routes (200, 201, 400, 404, 500)
 
 
