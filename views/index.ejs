@@ -28,7 +28,7 @@
                         <div class="book-item">
                             <img src="<%= book.cover_url %>" alt="<%= book.title %> cover" />
                             <strong>
-                                <%= book.title %> BY <%= book.author %>
+                                <%= book.title %> By <%= book.author %>
                             </strong>
                             <p>
                                 Read Date:
@@ -49,3 +49,4 @@
                     <p>No books found.</p>
                     <% } %>
         </div>
+    <%- include('partials/footer.ejs') %>

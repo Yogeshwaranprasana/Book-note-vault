@@ -26,7 +26,7 @@ let books =[{
 
 app.get("/",async (req,res)=>{
 try{
-const input = await db.query("SELECT * FROM books");
+const input = await db.query("SELECT * FROM books ORDER BY id ASC");
 const books =input.rows
    books.forEach(book => {
      book.cover_url = `https://covers.openlibrary.org/b/title/${encodeURIComponent(book.title)}-M.jpg`;

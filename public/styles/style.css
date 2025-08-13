@@ -306,4 +306,33 @@ li button[type="delete"]:hover {
 }
 
 /* ************************** */
-/* upadte book form style */
+
+
+
+/* ************************ */
+/* footer style  */
+/* Full height body */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content grows to fill space */
+.content {
+    flex: 1;          /* footer pushed to bottom if content is small */
+    padding-bottom: 0; /* remove extra space */
+    margin: 0;         /* remove default margins */
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* Footer styling */
+.footer-box {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 0.9rem;
+}
