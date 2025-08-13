@@ -30,13 +30,13 @@ Features:
    Delete books
 
    Books list sorted with top recommendations on top
-   
-   <img width="1850" height="836" alt="book note UI" src="https://github.com/user-attachments/assets/25e04e91-cfb1-454b-96ab-db1684823eb4" />
-
 
    Mobile-friendly and responsive design
    
    Proper HTTP status codes for API routes (200, 201, 400, 404, 500)
 
+  <img width="1850" height="836" alt="book note UI" src="https://github.com/user-attachments/assets/25e04e91-cfb1-454b-96ab-db1684823eb4" />
+
+  <img width="1707" height="746" alt="book note add form UI" src="https://github.com/user-attachments/assets/9fc72ecc-1a44-4273-8355-16dff6bb6703" />
 
    
