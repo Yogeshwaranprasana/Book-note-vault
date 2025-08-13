@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Book</title>
+
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+        <div class="container-table">
+            <h1>Add New Book</h1>
+            <form class="form-table box" action="/add" method="POST">
+                <input type="text" name="title" placeholder="Book Title" required>
+                <input type="text" name="author" placeholder="Author">
+                <input type="number" name="rating" placeholder="Rating" required>
+                <textarea name="notes" placeholder="Your notes" required></textarea>
+                <input type="date" name="date_read" 
+                value="<%= new Date().toISOString().split('T')[0] %>" readonly>
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+
+</body>
+
+</html>

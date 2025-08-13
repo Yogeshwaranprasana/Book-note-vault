@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Note App</title>
+
+</head>
+
+<body>
+    <%- include('partials/header.ejs') %>
+        <div class="container">
+            <div class="text-box ">
+                <h1>Book I Have Read</h1>
+                <a href="/add">Add New Book</a>
+                <p><strong>Tiny summary but detailed notes for each. Use the ISBN number
+                        to find it from your local library or anywhere else.
+                        This page will constantly update as I read more,
+                        so bookmark it if you want to check back in a few months.</strong>
+                </p>
+                <h4>Sorted with my top recommendations up top. Sort by title, newest, or best.</h4>
+            </div>
+            </br>
+            <% if (books && locals.books.length > 0) { %>
+                <div class="book-list">
+                    <% locals.books.forEach(book=> { %>
+                        <div class="book-item">
+                            <img src="<%= book.cover_url %>" alt="<%= book.title %> cover" />
+                            <strong>
+                                <%= book.title %> BY <%= book.author %>
+                            </strong>
+                            <p>
+                                Read Date:
+                                <%= new Date(book.date_read).toLocaleDateString("en-US", { month: "short" ,
+                                    day: "numeric" , year: "numeric" }) %>
+                                    How strongly I recommend it: <%= book.rating %>/10
+                            </p>
+                            <p>Short note: <%= book.notes %>
+                            </p>
+                            <a href="/edit/<%= book.id %>"class="btn btn-edit">Edit</a>
+                            <form class="btn" action="/delete/<%= book.id %>" method="POST" style="display:inline;">
+                                <button type="submit" class="btn btn-delete">Delete</button>
+                            </form>
+                        </div>
+                        <% }) %>
+                </div>
+                <% } else { %>
+                    <p>No books found.</p>
+                    <% } %>
+        </div>
