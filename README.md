@@ -30,6 +30,9 @@ Features:
    Delete books
 
    Books list sorted with top recommendations on top
+   
+   <img width="1850" height="836" alt="book note UI" src="https://github.com/user-attachments/assets/25e04e91-cfb1-454b-96ab-db1684823eb4" />
+
 
    Mobile-friendly and responsive design
    
