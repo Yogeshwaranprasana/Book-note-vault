@@ -3,13 +3,14 @@ import bodyParser from "body-parser";
 import axios from "axios"
 import pg from "pg"
 import env from "dotenv";
+// import db from "./db/pool.js";
+import pkg from "pg";
 
 
 const app = express();
 const port = process.env.PORT ||3000;
 env.config();
-
-
+const {pool}=pkg;
 
 
 const db = new pg.Pool({
@@ -20,7 +21,6 @@ const db = new pg.Pool({
     // port:process.env.DB_PORT,
     connectionString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false }
-
     
 });
 
