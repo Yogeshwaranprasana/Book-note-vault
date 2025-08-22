@@ -1,7 +1,7 @@
 import express from "express"
 import bodyParser from "body-parser";
 import axios from "axios"
-import pg from "pg"
+// import pg from "pg"
 import env from "dotenv";
 import pool from "./db/pool.js";
 
