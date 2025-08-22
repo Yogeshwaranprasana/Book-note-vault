@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import axios from "axios"
 import pg from "pg"
 import env from "dotenv";
+import pool from "./db/pool.js";
 
 
 
@@ -12,17 +13,17 @@ env.config();
 
 
 
-const db = new pg.Client({
+const pool = new pg.Pool({
     user:process.env.DB_USER,
     host:process.env.DB_HOST,
     database:process.env.DB_DATABASE,
     password:process.env.DB_PASSWORD,
     port:process.env.DB_PORT,
+    ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false
     
 });
 
-
-
+export default pool;
 
 
 db.connect();
