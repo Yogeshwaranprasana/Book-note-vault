@@ -13,7 +13,7 @@ env.config();
 
 
 
-const pool = new pg.Client({
+const db = new pg.Client({
     user:process.env.DB_USER,
     host:process.env.DB_HOST,
     database:process.env.DB_DATABASE,
